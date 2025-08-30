@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projeto Dashboard Vendas — Interativo</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard">
+
+    <!-- topo: cards de vendedores -->
+    <div class="cards">
+      <div class="card"><div class="card-title">Alon</div><div class="card-value">R$ 290.800</div></div>
+      <div class="card"><div class="card-title">Diego</div><div class="card-value">R$ 280.050</div></div>
+      <div class="card"><div class="card-title">Gabriel</div><div class="card-value">R$ 291.450</div></div>
+      <div class="card"><div class="card-title">João</div><div class="card-value">R$ 262.700</div></div>
+      <div class="card"><div class="card-title">Marcus</div><div class="card-value">R$ 285.850</div></div>
+      <div class="card"><div class="card-title">Paulo</div><div class="card-value">R$ 285.200</div></div>
+    </div>
+
+    <!-- Meta vs Receita -->
+    <div class="chart-card meta-vs-receita">
+      <div class="card-head">
+        <h4>Meta vs Receita</h4>
+        <div class="controls">
+          <div class="year-buttons" data-target="meta">
+            <button data-year="2019">2019</button>
+            <button data-year="2020" class="active">2020</button>
+            <button data-year="2021">2021</button>
+          </div>
+        </div>
+      </div>
+      <canvas id="metaChart"></canvas>
+    </div>
+
+    <!-- Receita por Produto -->
+    <div class="chart-card receita-produto">
+      <div class="card-head">
+        <h4>Receita por Produto</h4>
+        <div class="controls">
+          <div class="product-buttons">
+            <button class="prod-filter active" data-prod="Excel">Excel</button>
+            <button class="prod-filter" data-prod="Power BI">Power BI</button>
+            <button class="prod-filter" data-prod="PowerPoint">PowerPoint</button>
+            <button class="prod-filter" data-prod="Python">Python</button>
+            <button class="prod-filter" data-prod="VBA">VBA</button>
+            <button class="prod-filter" data-prod="Word">Word</button>
+          </div>
+          <div class="year-buttons" data-target="product">
+            <button data-year="2019">2019</button>
+            <button data-year="2020" class="active">2020</button>
+            <button data-year="2021">2021</button>
+          </div>
+        </div>
+      </div>
+      <canvas id="productChart"></canvas>
+    </div>
+
+    <!-- Análise Vendedor -->
+    <div class="chart-card analise-vendedor">
+      <div class="card-head">
+        <h4>Análise Vendedor</h4>
+        <div class="controls">
+          <div class="year-buttons" data-target="seller">
+            <button data-year="2019">2019</button>
+            <button data-year="2020" class="active">2020</button>
+            <button data-year="2021">2021</button>
+          </div>
+        </div>
+      </div>
+      <canvas id="sellerChart"></canvas>
+    </div>
+
+    <!-- Vendedor vs Produto -->
+    <div class="chart-card vendedor-vs-produto">
+      <div class="card-head">
+        <h4>Análise Vendedor vs Produto</h4>
+        <div class="controls">
+          <div class="year-buttons" data-target="sellerProd">
+            <button data-year="2019">2019</button>
+            <button data-year="2020" class="active">2020</button>
+            <button data-year="2021">2021</button>
+          </div>
+        </div>
+      </div>
+      <canvas id="sellerProdChart"></canvas>
+    </div>
+
+  </div>
+
+  <!-- Script JS no final -->
+  <script src="script.js"></script>
+</body>
+</html>
